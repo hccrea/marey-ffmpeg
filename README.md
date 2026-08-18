@@ -19,25 +19,28 @@ distributed.
 | **How it is used** | Marey runs `ffmpeg` as a **separate process**. It is not linked into the application. |
 | **License** | LGPL 2.1 or later. No GPL or non-free components are enabled. |
 
-- `build-ffmpeg-lgpl.sh` — the exact script used to produce the binary shipped
-  with Marey. It downloads the official FFmpeg source archive, configures it,
-  and builds a self-contained `arm64` binary with no external dynamic library
-  dependencies.
-- **[Releases](../../releases)** — the complete, unmodified FFmpeg source
-  archive corresponding to the binary shipped with each version of Marey.
+- `ffmpeg-7.1.tar.xz` — the complete, unmodified FFmpeg source archive
+  corresponding to the binary shipped with Marey.
+- `build-ffmpeg-lgpl.sh` — the exact script used to produce that binary. It
+  downloads the official source archive, configures it, and builds a
+  self-contained `arm64` binary with no external dynamic library dependencies.
 
 ## Getting the sources
 
-Download `ffmpeg-7.1.tar.xz` from the
-[Releases page](../../releases), or directly from the official project:
+The archive is available in **three** places, all byte-for-byte identical:
+
+- committed at the root of this repository, so a clone is enough;
+- attached to the [Releases](../../releases) page, one release per FFmpeg
+  version shipped;
+- and from the official project:
 
 ```
 curl -LO https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz
 ```
 
-Both are byte-for-byte identical. The archive attached to the release is kept
-here so that the exact sources remain available alongside the binary that was
-built from them, for as long as Marey is distributed.
+The archive is kept here, rather than only linked, so that the exact sources
+remain available alongside the binary that was built from them, for as long as
+Marey is distributed.
 
 ## Build configuration
 
